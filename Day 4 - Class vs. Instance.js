@@ -7,3 +7,26 @@
 //If age < 13, print You are young..
 //If age >= 14 and age < 18, print You are a teenager..
 //Otherwise, print You are old..
+
+
+function Person(initialAge){
+    var age;
+    if (initialAge >= 0) {
+        age = initialAge;
+    } else {
+        age = 0;
+        console.log('Age is not valid, setting age to 0.');
+    }
+  this.amIOld=function(){
+    if (age < 13) {
+        console.log('You are young.');
+    } else if (age >= 13 && age < 18) {
+        console.log('You are a teenager.')
+    } else {
+        console.log('You are old.')
+    }
+  };
+   this.yearPasses=function(){
+        age++;
+   };
+}
