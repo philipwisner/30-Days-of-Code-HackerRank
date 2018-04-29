@@ -1,6 +1,6 @@
 DAY 10: Binary Numbers
 
-Convert base 10 number to base 2. Then count the consecutive ones, and return that number
+//Convert base 10 number to base 2. Then count the consecutive ones, and return that number
 
 function main() {
   var n = parseInt(readLine());
