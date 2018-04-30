@@ -28,16 +28,39 @@ class Person {
 }
 
 class Student extends Person {
-    /*	
-    *   Class Constructor
-    *   
-    *   @param firstName - A string denoting the Person's first name.
-    *   @param lastName - A string denoting the Person's last name.
-    *   @param id - An integer denoting the Person's ID number.
-    *   @param scores - An array of integers denoting the Person's test scores.
-    */
-    // Write your constructor here
-
+    constructor(firstName, lastName, identification, scores) {
+        super();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.idNumber = identification;
+        this.scores = scores;
+    }
+    
+    calculate() {
+        var scoreSum = 0;
+        for (let i = 0; i < this.scores.length; i++) {
+            scoreSum += this.scores[i];
+        }
+        var grade =  scoreSum / this.scores.length;
+        
+        var score;
+        if (grade <= 100 & grade >= 90) {
+            score = 'O';
+        } else if (grade <= 90 & grade >= 80) {
+            score = 'E';
+        } else if (grade <= 80 & grade >= 70) {
+            score = 'A';  
+        } else if (grade <= 70 & grade >= 55) {
+            score = 'P';
+        } else if (grade <= 55 & grade >= 40) {
+            score = 'D';
+        } else {
+            score = 'T';
+        }
+        
+        return score;
+    }
+    
     /*	
     *   Method Name: calculate
     *   @return A character denoting the grade.
