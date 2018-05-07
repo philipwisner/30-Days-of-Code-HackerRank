@@ -11,21 +11,15 @@ Write the following declarations and implementations:
 5. A char dequeueCharacter() method that dequeues and returns the first character in the queue instance variable.
 */
 
-function Solution(s){
-    this.string = s;
-    this.queue = queue;
-    this.stack = stack;
+function Solution(){
+    this.stack = [];
+    this.queue = [];
     
-    this.pushCharacter = function() {
-        
-    };
-    this.enqueueCharacter = function() {
-        
-    };
-    this.popCharacter = function() {
-        
-    };
-    this.dequeueCharacter = function() {
-        
-    };
+    Solution.prototype.pushCharacter =  this.stack.push;
+    Solution.prototype.enqueueCharacter = this.queue.push;
+    Solution.prototype.popCharacter = this.stack.pop;
+    Solution.prototype.dequeueCharacter = this.queue.shift;
 }
+
+
+//Does not pass test if methods are added into constructor not as prototypes.
