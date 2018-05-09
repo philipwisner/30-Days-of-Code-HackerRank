@@ -8,27 +8,42 @@ Note: You must use generics to solve this challenge. Do not write overloaded fun
 
 //Not available in JavaScript or Python
 
-function main() {
-    var n = parseInt(readLine());
-    a = readLine().split(' ');
-    a = a.map(Number);
-    // Write Your Code Here
-    var swapped;
-    var numberOfSwaps = 0;
-    do {
-        swapped = false;
-        for (var i = 0; i < n; i++) {
-            if (a[i] > a[i + 1]) {
-                numberOfSwaps++;
-                var temp = a[i];
-                a[i] = a[i+1];
-                a[i+1] = temp;
-                swapped = true;
-            }
+import java.util.*;
+
+//SOLUTION HERE
+
+class Printer <T> {
+    public static <T> void printArray(T[] array) {
+        for (T t : array) {
+            System.out.println(t);
         }
-    } while (swapped);
+    }
+}
+
+//Added the method for printArray
+
+public class Generics {
     
-    console.log('Array is sorted in ' + numberOfSwaps + ' swaps.'); 
-    console.log('First Element: ' + a[0]);
-    console.log('Last Element: ' + a[a.length-1]);
+    public static void main(String args[]){
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        Integer[] intArray = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            intArray[i] = scanner.nextInt();
+        }
+
+        n = scanner.nextInt();
+        String[] stringArray = new String[n];
+        for (int i = 0; i < n; i++) {
+            stringArray[i] = scanner.next();
+        }
+        
+        Printer<Integer> intPrinter = new Printer<Integer>();
+        Printer<String> stringPrinter = new Printer<String>();
+        intPrinter.printArray( intArray  );
+        stringPrinter.printArray( stringArray );
+        if(Printer.class.getDeclaredMethods().length > 1){
+            System.out.println("The Printer class should only have 1 method named printArray.");
+        }
+    } 
 }
