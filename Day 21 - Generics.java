@@ -13,14 +13,14 @@ import java.util.*;
 //SOLUTION HERE
 
 class Printer <T> {
-    public static <T> void printArray(T[] array) {
-        for (T t : array) {
-            System.out.println(t);
+    public static <E> void printArray(E[] array) {
+        for (E e : array) {
+            System.out.println(e);
         }
     }
 }
 
-//Added the method for printArray
+//Added the method for printArray with <T> for generic type. Created public static method that takes a generic element and passes the element array as a parameter to the function. Then print each element in the array.
 
 public class Generics {
     
