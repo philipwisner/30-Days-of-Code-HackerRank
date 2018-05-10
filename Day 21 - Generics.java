@@ -20,7 +20,7 @@ class Printer <T> {
     }
 }
 
-//Added the method for printArray with <T> for generic type. Created public static method that takes a generic element and passes the element array as a parameter to the function. Then print each element in the array.
+//Added the method for printArray with <T> for generic type. Created public static (assocaited with class) method that takes a generic element and passes the element array as a parameter to the function. Then print each element in the array.
 
 public class Generics {
     
