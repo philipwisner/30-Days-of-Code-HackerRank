@@ -37,7 +37,12 @@ function BinarySearchTree() {
         
     // Start of function getHeight
     this.getHeight = function(root) {
-        
+        if (root == null) {
+            return -1;
+        } else {
+            return 1 + Math.max(this.getHeight(root.left), this.getHeight(root.right));
+        }
+
         
         
     }; // End of function getHeight
