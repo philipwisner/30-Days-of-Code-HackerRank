@@ -24,9 +24,24 @@ class Solution:
     
 # SOLUTION HERE
     def levelOrder(self,root):
+        if root is None:
+            return
+        
+        queue = []
+        queue.append(root)
+
+        while(len(queue) > 0):
+            node = queue[0]
+            queue = queue[1:]
+            print(str(node.data) + " ", end="")
+
+            if node.left is not None:
+                queue.append(node.left)
+
+            if node.right is not None:
+                queue.append(node.right)
 
     
-
 T=int(input())
 myTree=Solution()
 root=None
