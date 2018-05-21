@@ -1,7 +1,7 @@
 # DAY 27: TESTING
 
 # Testing for a company
-
+# Only available in python
 
 class TestDataEmptyArray(object):
     
