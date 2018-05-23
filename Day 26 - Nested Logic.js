@@ -6,3 +6,18 @@
 // If the book is returned after the expected return day but still within the same calendar month and year as the expected return date, .
 // If the book is returned after the expected return month but still within the same calendar year as the expected return date, the .
 // If the book is returned after the calendar year in which it was expected, there is a fixed fine of .
+
+function processData(input) {
+    //Enter your code here
+}
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+    processData(_input);
+});
