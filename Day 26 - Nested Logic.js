@@ -25,7 +25,7 @@ function processData(input) {
     } else if (date1[2] === date2[2]) {
         fine = 500 * (date1[1] - date2[1]);
     } else {
-        fine = 1000;
+        fine = 10000;
     }
     console.log(fine);
 } 
