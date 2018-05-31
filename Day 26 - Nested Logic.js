@@ -8,8 +8,27 @@
 // If the book is returned after the calendar year in which it was expected, there is a fixed fine of .
 
 function processData(input) {
-    //Enter your code here
-}
+    var dates = input.split("\n");
+
+    var date1 = dates[0].split(" ");
+    var date2 = dates[1].split(" ");
+
+    var startDate = new Date(date1[2], date1[1], date1[0]);
+    var endDate = new Date(date2[2], date2[1], date2[0]);
+
+    var fine = 0;
+
+    if (startDate <= endDate) {
+        fine = 0;
+    } else if (date1[1] === date2[1] && date1[2] === date2[2]) {
+        fine = 15 * (date1[0] - date2[0]);
+    } else if (date1[2] === date2[2]) {
+        fine = 500 * (date1[1] - date2[1]);
+    } else {
+        fine = 1000;
+    }
+    console.log(fine);
+} 
 
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
